@@ -36,8 +36,8 @@ local function set_groups()
     Cursor = { fg = colors.bg, bg = colors.fg },
     CursorColumn = { bg = colors.line },
     CursorLine = { bg = colors.line },
-    CursorLineNr = { fg = colors.accent, bg = colors.line },
-    LineNr = { fg = colors.guide_normal },
+    CursorLineNr = { fg = colors.guide_normal, bg = colors.bg2 },
+    LineNr = { fg = colors.guide_active },
 
     Directory = { fg = colors.func },
     ErrorMsg = { fg = colors.error },
@@ -462,7 +462,7 @@ function ayu.colorscheme()
   vim.o.termguicolors = true
   vim.g.colors_name = 'ayu'
 
-  colors.generate(config.mirage)
+  colors.generate()
   if config.terminal then
     set_terminal_colors()
   end
