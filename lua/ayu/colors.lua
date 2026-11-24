@@ -53,8 +53,8 @@ function colors.generate(mirage)
       colors.warning = '#FFA759'
     else
       colors.accent = '#E6B450'
-      colors.bg = '#0B0E14'
-      colors.fg = '#BFBDB6'
+      colors.bg = '#181818'
+      colors.fg = '#FFFFFF'
       colors.ui = '#565B66'
 
       colors.tag = '#39BAE6'
@@ -81,7 +81,7 @@ function colors.generate(mirage)
       colors.selection_inactive = '#122132'
       colors.selection_border = '#304357'
       colors.guide_active = '#3C414A'
-      colors.guide_normal = '#1E222A'
+      colors.guide_normal = '#6B7B8E'
 
       colors.vcs_added = '#7FD962'
       colors.vcs_modified = '#73B8FF'
