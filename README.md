@@ -1,4 +1,4 @@
-# Neovim Ayu
+# Neovim Gruber-darker-ayu
 
 A colorscheme for Neovim reimplemented in lua from [ayu-vim](https://github.com/Luxed/ayu-vim) and [gruber-darker-ayu](https://github.com/Hadi493/gruber-darker-ayu-theme).
 
@@ -9,14 +9,14 @@ TODO
 
 ## Commands
 
-To apply the colorscheme, you can call `require('ayu').colorscheme()` from lua or use `:colorscheme ayu` command.
+To apply the colorscheme, you can call `require('gruber-darker-ayu').colorscheme()` from lua or use `:colorscheme gruber-darker-ayu` command.
 
 ## Configuration
 
-To configure the plugin, you can call `require('ayu').setup(values)`, where `values` is a dictionary with the parameters you want to override. Here are the defaults:
+To configure the plugin, you can call `require('gruber-darker-ayu').setup(values)`, where `values` is a dictionary with the parameters you want to override. Here are the defaults:
 
 ```lua
-require('ayu').setup({
+require('gruber-darker-ayu').setup({
     terminal = true, -- Set to `false` to let terminal manage its own colors.
     overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
 })
@@ -29,7 +29,7 @@ Colorscheme also provides a theme for [lualine.nvim](https://github.com/nvim-lua
 ```lua
 require('lualine').setup({
   options = {
-    theme = 'ayu',
+    theme = 'gruber-darker-ayu',
   },
 })
 ```
@@ -39,7 +39,7 @@ require('lualine').setup({
 #### Transparency
 
 ```lua
-require('ayu').setup({
+require('gruber-darker-ayu').setup({
     overrides = {
         Normal = { bg = "None" },
         NormalFloat = { bg = "none" },
@@ -59,24 +59,24 @@ require('ayu').setup({
 #### Re-use colors from the colorscheme
 
 ```lua
-local colors = require('ayu.colors')
+local colors = require('gruber-darker-ayu.colors')
 colors.generate() -- Pass `true` to enable mirage
 
-require('ayu').setup({
+require('gruber-darker-ayu').setup({
   overrides = {
     IncSearch = { fg = colors.fg }
   }
 })
 ```
 
-**Tip:** You can use `:lua print(vim.inspect(require('ayu.colors')))` command to check all available colors.
+**Tip:** You can use `:lua print(vim.inspect(require('gruber-darker-ayu.colors')))` command to check all available colors.
 
 #### Set background color of non-active windows for both light and dark backgrounds
 
 In this case you need to use a function to dynamically generate colors:
 
 ```lua
-require('ayu').setup({
+require('gruber-darker-ayu').setup({
   overrides = function()
     if vim.o.background == 'dark' then
       return { NormalNC = {bg = '#0f151e', fg = '#808080'} }
@@ -87,12 +87,12 @@ require('ayu').setup({
 })
 ```
 
-**Tip:** If you use `ayu.colors` as in the example above, you don't need to check for `vim.o.background`, but you still need to use a function.
+**Tip:** If you use `gruber-darker-ayu.colors` as in the example above, you don't need to check for `vim.o.background`, but you still need to use a function.
 
 #### Disable _italic_ for comments
 
 ```lua
-require('ayu').setup({
+require('gruber-darker-ayu').setup({
   overrides = {
     Comment = { italic = false },
   },

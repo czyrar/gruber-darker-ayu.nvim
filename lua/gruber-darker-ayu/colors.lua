@@ -6,8 +6,7 @@ local colors = {
   lsp_inlay_hint = '#969696',
 }
 
---- Generate colors based `vim.o.background` and a variant.
----@param mirage boolean: Whether to use `mirage` variant when `vim.o.background` is dark.
+--- Generate colors
 function colors.generate()
   colors.accent = '#FFD064'
   colors.bg = '#181818'

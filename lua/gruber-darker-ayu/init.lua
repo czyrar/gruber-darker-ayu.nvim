@@ -1,6 +1,6 @@
-local colors = require('ayu.colors')
-local config = require('ayu.config')
-local ayu = {}
+local colors = require('gruber-darker-ayu.colors')
+local config = require('gruber-darker-ayu.config')
+local gruber_darker_ayu = {}
 
 --- Apply terminal highlighting.
 local function set_terminal_colors()
@@ -444,12 +444,12 @@ end
 
 --- Apply user settings.
 ---@param values table
-function ayu.setup(values) setmetatable(config, { __index = vim.tbl_extend('force', config.defaults, values) }) end
+function gruber_darker_ayu.setup(values) setmetatable(config, { __index = vim.tbl_extend('force', config.defaults, values) }) end
 
 --- Set the colorscheme.
-function ayu.colorscheme()
+function gruber_darker_ayu.colorscheme()
   if vim.version().minor < 8 then
-    vim.notify('Neovim 0.8+ is required for ayu colorscheme', vim.log.levels.ERROR, { title = 'Ayu colorscheme' })
+    vim.notify('Neovim 0.8+ is required for gruber-darker-ayu colorscheme', vim.log.levels.ERROR, { title = 'gruber-darker-ayu colorscheme' })
     return
   end
 
@@ -460,7 +460,7 @@ function ayu.colorscheme()
 
   vim.g.VM_theme_set_by_colorscheme = true -- Required for Visual Multi
   vim.o.termguicolors = true
-  vim.g.colors_name = 'ayu'
+  vim.g.colors_name = 'gruber-darker-ayu'
 
   colors.generate()
   if config.terminal then
@@ -469,4 +469,4 @@ function ayu.colorscheme()
   set_groups()
 end
 
-return ayu
+return gruber_darker_ayu
